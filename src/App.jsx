@@ -6,6 +6,7 @@ import './App.css'
 import Motivation from './pages/Motivation';
 import MainLayout from './components/MainLayout';
 import About from './pages/About';
+import DetailMentor from './pages/DetailMentor';
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
         element: <Home />
       },
       {
-        path: "/about",
-        element: <About />
+        path: "/detail/:id",
+        element: <DetailMentor />,
       },
       {
         path: "/motivation",
