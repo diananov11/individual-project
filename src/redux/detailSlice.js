@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const mentorSlice = createSlice({
-  name: "mentor",
+const detailSlice = createSlice({
+  name: "detail",
   initialState: {
     isLoading: false,
-    mentors: [],
+    details: [],
   },
   reducers: {
     startFetch: (state) => {
@@ -14,17 +14,17 @@ const mentorSlice = createSlice({
     },
     successGetData: (state, action) => {
       state.isLoading = false;
-      state.mentors = action.payload;
+      state.details = action.payload;
     },
   },
 });
 
-export function getAllMentors() {
+export function getDetailMentors(id) {
   return async function (dispatch) {
     try {
       dispatch(startFetch());
       const { data } = await axios.get(
-        "https://shelled-aeolian-raisin.glitch.me/Mentor"
+        `https://shelled-aeolian-raisin.glitch.me/Mentor/${id}`
       );
       dispatch(successGetData(data));
     } catch (e) {
@@ -38,5 +38,5 @@ export function getAllMentors() {
   };
 }
 
-const { startFetch, successGetData } = mentorSlice.actions;
-export default mentorSlice.reducer;
+const { startFetch, successGetData } = detailSlice.actions;
+export default detailSlice.reducer;

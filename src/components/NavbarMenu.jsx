@@ -6,7 +6,6 @@ import Submenu from './Submenu';
 function NavbarMenu() {
   const submenu = [
     { path: '/', menu: "Home" },
-    { path: '/about', menu: "About" },
     { path: '/motivation', menu: "Motivation" }
   ]
 

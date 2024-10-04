@@ -1,17 +1,13 @@
-
 import Error from './pages/Error'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import './App.css'
 import Motivation from './pages/Motivation';
 import MainLayout from './components/MainLayout';
-import About from './pages/About';
 import DetailMentor from './pages/DetailMentor';
 
 
 function App() {
-
-
   const router = createBrowserRouter([{
     element: <MainLayout />,
     children: [

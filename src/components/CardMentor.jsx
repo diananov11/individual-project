@@ -1,8 +1,11 @@
 import { Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 const CardMentor = ({ item }) => {
+
+  const navigate = useNavigate()
   return (
     <>
       <Col md={3} sm={6}>
@@ -12,10 +15,7 @@ const CardMentor = ({ item }) => {
             <Card.Title className="my-1"> {item.name}</Card.Title>
             <p className="my-1">{item.universitas}</p>
             <small className="d-block my-0">{item.asalDaerah}</small>
-            <div className="m-2">
-              <Button variant="primary" className="mx-2" >Info</Button>
-              <Button variant="primary">Daftar</Button>
-            </div>
+            <Button variant="primary" className="m-2 w-75" onClick={() => navigate(`/detail/${item.id}`)} >Info</Button>
           </Card.Body>
         </Card>
       </Col>
