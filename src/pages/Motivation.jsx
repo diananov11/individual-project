@@ -57,13 +57,12 @@ const Motivation = () => {
             />
           </h4>
           :
-          <h5 className='text-center'>
+          <h5 className='text-center mt-5 pt-5'>
             <Typewriter
               options={{
                 strings: "Hello! Welcome to SheMentorAI, your personal companion on the journey to achieving your scholarship dreams. We're here to inspire, guide, and empower you every step of the way with personalized motivation tailored just for you🎀",
                 autoStart: true,
                 delay: 20,
-                // cursor: "",
               }} />
           </h5>
 
