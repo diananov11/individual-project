@@ -21,7 +21,9 @@ const mentorSlice = createSlice({
 export function getAllMentors() {
   return async function (dispatch) {
     dispatch(startFetch());
-    const { data } = await axios.get("http://localhost:3000/Mentor");
+    const { data } = await axios.get(
+      "https://shelled-aeolian-raisin.glitch.me/Mentor"
+    );
     dispatch(successGetData(data));
   };
 }
