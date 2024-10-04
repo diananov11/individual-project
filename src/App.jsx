@@ -23,9 +23,12 @@ function App() {
         path: "/motivation",
         element: <Motivation />
       },
+      {
+        path: "/error",
+        element: <Error />
+      },
     ]
   },
-
   {
     path: "*",
     element: <Error />
