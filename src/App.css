@@ -4,3 +4,10 @@ div.error {
   background-size: cover;
   height: 100vh;
 }
+
+div.hero {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/146/203/original/pexels-iamhogir-17735078_%281%29.jpg?1728026800");
+  background-size: cover;
+  height: 90vh;
+  background-position: center;
+}

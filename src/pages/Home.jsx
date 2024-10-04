@@ -1,13 +1,15 @@
+import Content from "../components/Content"
+import Hero from "../components/Hero"
 import Navbar from "../components/NavbarMenu"
 
 
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
-      <h1>hai</h1>
-    </div>
+    <>
+      <Hero />
+      <Content />
+    </>
   )
 }
 
