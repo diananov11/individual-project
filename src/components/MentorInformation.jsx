@@ -3,7 +3,7 @@
 const MentorInformation = ({ details }) => {
   return (
     <>
-      <div className="me-5">
+      <div>
         <h3 className="text-blue text-center mb-4">{details.name} - Mentor SheMentors</h3>
         <p className="my-0"><span className="text-blue fw-bold">Wilayah asal: </span> {details.asalDaerah}</p>
         <p className="my-0"><span className="text-blue fw-bold">Pendidikan: </span> {details.universitas}</p>

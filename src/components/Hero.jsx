@@ -14,7 +14,7 @@ const Hero = () => {
               <h1>Mentorship and Motivation at Your Fingertips</h1>
               <p className="text-muted">Get matched with a mentor who understands your journey, or generate personalized motivation with a simple click. Your success starts here.</p>
               <div>
-                <a href="#mentor" className="btn btn-primary mx-2">Find Mentors</a>
+                <a href="#mentor" className="btn btn-outline-primary mx-2">Find Mentors</a>
                 <Button onClick={() => navigate('/motivation')} className="btn-primary">Get Motivated Now <FaArrowRightLong /></Button>
               </div>
             </div>

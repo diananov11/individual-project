@@ -3,7 +3,7 @@
 const ProfileCard = ({ details }) => {
   return (
     <>
-      <div className="card mx-auto " style={{ width: "18rem" }}>
+      <div className="card mx-auto d-none d-md-block" style={{ width: "18rem" }}>
         <img
           src={details.avatar}
           className="card-img-top p-3" alt="..." />
