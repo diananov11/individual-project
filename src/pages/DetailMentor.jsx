@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import MentorInformation from "../components/MentorInformation";
 import ProfileCard from "../components/ProfileCard";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import MentorSchedule from "../components/MentorSchedule";
+import Loading from "../components/Loading";
 
 
 const DetailMentor = () => {
@@ -17,19 +18,21 @@ const DetailMentor = () => {
     dispatch(getDetailMentors(id));
   }, []);
 
-
-
   return (
     <>
-      <Container className="d-flex mt-5 pt-5">
-        <div>
-          <MentorInformation details={details} />
-          <MentorSchedule details={details} />
-        </div>
-        <div className="d-none d-md-block ms-5">
-          <ProfileCard details={details} />
-        </div>
-      </Container>
+      {isLoading ? <Loading /> :
+        <Container className="d-flex mt-5 pt-5">
+          <>
+            <div>
+              <MentorInformation details={details} />
+              <MentorSchedule details={details} />
+            </div>
+            <div className="d-none d-md-block ms-5">
+              <ProfileCard details={details} />
+            </div>
+          </>
+        </Container>
+      }
     </>
 
   )

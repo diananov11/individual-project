@@ -6,14 +6,17 @@ const motivationSlice = createSlice({
   name: "motivation",
   initialState: {
     isLoading: false,
+    isFill: false,
     motivations: "",
   },
   reducers: {
     startFetch: (state) => {
       state.isLoading = true;
+      state.isFill = true;
     },
     successGetData: (state, action) => {
       state.isLoading = false;
+      state.isFill = true;
       state.motivations = action.payload;
     },
   },

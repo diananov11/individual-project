@@ -1,5 +1,3 @@
-
-
 const MentorSchedule = ({ details }) => {
   return (
     <>

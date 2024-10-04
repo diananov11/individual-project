@@ -2,7 +2,6 @@ import { Button, Col, Container, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { FaArrowRightLong } from "react-icons/fa6";
 
-
 const Hero = () => {
   const navigate = useNavigate()
   return (
@@ -21,7 +20,6 @@ const Hero = () => {
           </Col>
           <Col className="d-none d-md-block">
             <div className="hero  fluid">
-
             </div>
           </Col>
         </Row>

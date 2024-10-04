@@ -5,15 +5,24 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMotivationAI } from '../redux/motivationSlice';
 import { Container } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const Motivation = () => {
   const [input, setInput] = useState('')
   const dispatch = useDispatch();
-  const { isLoading, motivations } = useSelector((state) => state.motivation);
+  const { isLoading, isFill, motivations } = useSelector((state) => state.motivation);
 
   const handleInput = (e) => {
     e.preventDefault();
-    dispatch(getMotivationAI(input));
+    if (input === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: `Something went wrong! Type your name and city first`,
+      });
+    } else {
+      dispatch(getMotivationAI(input));
+    }
   }
 
   return (
@@ -36,21 +45,30 @@ const Motivation = () => {
       </div>
 
       <Container className="mt-5 w-75 mx-auto">
-        <div>
-          {
-            <h4 className='text-primary'>
-              <Typewriter
-                options={{
-                  strings: isLoading ? `Generate Motivations for ${input}` : motivations,
-                  autoStart: true,
-                  delay: 1,
-                  cursor: "",
-                }}
-              /></h4>
-          }
-        </div>
-      </Container>
+        {isFill ?
+          < h4 className='text-primary'>
+            <Typewriter
+              options={{
+                strings: isLoading ? `Generate Motivations for ${input}✨` : motivations,
+                autoStart: true,
+                delay: 1,
+                cursor: "",
+              }}
+            />
+          </h4>
+          :
+          <h5 className='text-center'>
+            <Typewriter
+              options={{
+                strings: "Hello! Welcome to SheMentorAI, your personal companion on the journey to achieving your scholarship dreams. We're here to inspire, guide, and empower you every step of the way with personalized motivation tailored just for you🎀",
+                autoStart: true,
+                delay: 20,
+                // cursor: "",
+              }} />
+          </h5>
 
+        }
+      </Container>
     </div>
   )
 }
