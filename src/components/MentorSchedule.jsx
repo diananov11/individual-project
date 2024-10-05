@@ -1,4 +1,7 @@
-const MentorSchedule = ({ details }) => {
+import { useSelector } from "react-redux";
+
+const MentorSchedule = () => {
+  const { details } = useSelector((state) => state.detail);
   return (
     <>
       <h5 className="text-blue">Jadwal Mentoring Mentor</h5>

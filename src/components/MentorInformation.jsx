@@ -1,4 +1,7 @@
-const MentorInformation = ({ details }) => {
+import { useSelector } from "react-redux";
+
+const MentorInformation = () => {
+  const { details } = useSelector((state) => state.detail);
   return (
     <>
       <div>

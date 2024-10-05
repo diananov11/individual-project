@@ -1,4 +1,7 @@
-const ProfileCard = ({ details }) => {
+import { useSelector } from "react-redux";
+
+const ProfileCard = () => {
+  const { details } = useSelector((state) => state.detail);
   return (
     <>
       <div className="card mx-auto d-none d-md-block" style={{ width: "18rem" }}>
