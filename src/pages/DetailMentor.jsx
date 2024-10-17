@@ -12,7 +12,7 @@ import Loading from "../components/Loading";
 const DetailMentor = () => {
   let { id } = useParams()
   const dispatch = useDispatch();
-  const { isLoading, details } = useSelector((state) => state.detail);
+  const { isLoading } = useSelector((state) => state.detail);
 
   useEffect(() => {
     dispatch(getDetailMentors(id));
@@ -24,11 +24,11 @@ const DetailMentor = () => {
         <Container className="d-flex mt-5 pt-5">
           <>
             <div>
-              <MentorInformation details={details} />
-              <MentorSchedule details={details} />
+              <MentorInformation />
+              <MentorSchedule />
             </div>
             <div className="d-none d-md-block ms-5">
-              <ProfileCard details={details} />
+              <ProfileCard />
             </div>
           </>
         </Container>

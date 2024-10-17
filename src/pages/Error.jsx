@@ -3,13 +3,10 @@ import { NavLink } from "react-router-dom"
 
 const Error = () => {
   return (
-    <>
-      <div className="error min-vh-100 text-white text-center align-content-center" >
-        <h1> OOOPSS!! this file doesn't exist </h1>
-        <h3>404 - Page Not Found..</h3>
-        <NavLink to='/' className="text-white">Back to home</NavLink>
-      </div>
-    </>
+    <div className="bg-[url('assets/error.jpg')] bg-center bg-cover bg-no-repeat h-screen content-center text-center" >
+      <h1 className="text-4xl fw-bold">Error 404 Not Found</h1>
+      <NavLink to="/" className="underline"> Back to todo apps</NavLink>
+    </div>
   )
 }
 
